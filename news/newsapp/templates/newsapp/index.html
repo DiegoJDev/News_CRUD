@@ -1,0 +1,12 @@
+{% if latest_news_list %}
+
+    <ul>
+    {% for news in latest_news_list  %}
+        <li><a href="{% url 'newsapp:detail' news.id %}"> {{news.title}},{{news.news_text}},{{news.pub_date}},{{news.author}} </a></li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No existen noticias.</p>
+
+{% endif %}
