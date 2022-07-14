@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsApp</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <form method="post">{% csrf_token %}
+            {{ news.title }}
+            <li>{{news.news_text}}</li>
+            <li>{{news.author}}</li>
+            <li>{{news.pub_date}}</li>
+            <li>{{news.update_date}}</li>
+            <p>¿Estas seguro que quieres elimninar esta noticia?""?</p>
+            {{ form }}
+            <input type="submit" value="Confirm"> <input type=button value="Atras" onClick="javascript:history.go(-1);">
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

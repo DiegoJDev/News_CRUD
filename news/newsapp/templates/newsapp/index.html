@@ -1,12 +1,48 @@
-{% if latest_news_list %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsApp</title>
+</head>
+<body>
+  <header>
+    <h1>Ultimas Noticas NewsApp</h1>
+  </header>
+  <main>
 
-    <ul>
-    {% for news in latest_news_list  %}
-        <li><a href="{% url 'newsapp:detail' news.id %}"> {{news.title}},{{news.news_text}},{{news.pub_date}},{{news.author}} </a></li>
-    {% endfor %}
-    </ul>
+    <section>
 
-{% else %}
-    <p>No existen noticias.</p>
+      <a href="{% url 'newsapp:create' %}">Crear noticia</a>
 
-{% endif %}
+    </section>
+
+    <section>
+    {% if list_news  %}
+
+      {% for news in list_news %}
+      <ul>
+        <a href=" {% url 'newsapp:detail' news.id %} "><h2>{{news.title}}</h2></a>
+        <li>{{news.news_text}}</li>
+        <li>{{news.author}}</li>
+        <li>{{news.pub_date}}</li>
+        <li>{{news.update_date}}</li>
+        <a href="{% url 'newsapp:update' news.id %}">Editar</a>  <a href="{% url 'newsapp:delete' news.id %}">Eliminar</a>
+      </ul>
+      
+      {% endfor %}
+    
+    {% else %}
+    <p>No hay noticias</p>
+    {% endif %}
+  
+    </section>
+  </main>
+  <footer>
+    Desarrollado por Diego Cardenas
+  </footer>
+
+  
+</body>
+</html>
