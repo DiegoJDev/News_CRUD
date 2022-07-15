@@ -20,5 +20,5 @@ If you are sick and tired to see that news every day, you can delete, just click
 ------------
 
 
-**In order to make a python environment, please check the requierements.txt
+**In order to make a python environment, please check the requirements.txt
 **
