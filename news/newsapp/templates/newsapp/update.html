@@ -5,17 +5,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% comment %} Calling a css to reset stayles by defect{% endcomment %}
   <link rel="stylesheet" href=   "{% static 'newsapp/reset.css' %}">
   <link
   href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;900&display=swap"
   rel="stylesheet"
   />
+  {% comment %} We can see here the template in which is rendering {% endcomment %}
   <link rel="stylesheet" href=   "{% static 'newsapp/update.css' %}">
   <title>NewsApp</title>
 </head>
 <body>
   <header>
     <section >
+      {% comment %} A link to view the database {% endcomment %}
       <a class = "admin" href="/admin">Admin</a>
     </section>
   </header>
@@ -25,7 +28,7 @@
     <br>
     <br>
     <br>
-
+    {% comment %} With pk, we get the information that we already fill in form, so we just edit and submit again in the same pk {% endcomment %}
     <section class= "container">
       <form  action="" method="post"> 
         {% csrf_token %}
