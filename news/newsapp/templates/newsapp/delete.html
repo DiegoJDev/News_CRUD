@@ -5,21 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} Calling a css to reset stayles by defect{% endcomment %}
     <link rel="stylesheet" href=   "{% static 'newsapp/reset.css' %}">
     <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;900&display=swap"
     rel="stylesheet"
     />
+    {% comment %} We can see here the template in which is rendering {% endcomment %}
     <link rel="stylesheet" href=   "{% static 'newsapp/delete.css' %}">
     <title>NewsApp</title>
 </head>
 <body>
   <header>
       <section >
+        {% comment %} A link to view the database {% endcomment %}
           <a class = "admin" href="/admin">Admin</a>
         </section>
   </header>
   <main>
+    {% comment %} Making a post because we need to delete info in database, so thats why I call news object by pk {% endcomment %}
       <form  method="post">{% csrf_token %}
         <section class="container">
           <ul>

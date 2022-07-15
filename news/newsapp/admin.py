@@ -3,7 +3,7 @@ from .models import News
 
 # Register your models here.
 
-# Aca importo el model News para que se pueda editar en el administrador
+# I got to import model News in order to admin could work on it.
 
 admin.site.register(News)
 

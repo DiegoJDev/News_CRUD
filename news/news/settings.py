@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    #agregue la app newsapp despues de crear el modelo news en modelos
+    #Adding app in ortder to be able to render
     "newsapp.apps.NewsappConfig",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'news.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    #I worked with the default db.
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -110,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 #I changed UTC to local time
-TIME_ZONE = 'America/Bogota'
+TIME_ZONE = 'America/Bogota' #I changed  the time-zone to be specific what I want as I know that app will be seen by colombian people.
 
 USE_I18N = True
 

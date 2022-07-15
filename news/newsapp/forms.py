@@ -1,11 +1,11 @@
-from pyexpat import model
+#I created form.py
 from django import forms
 from .models import News
 
-#Como se quiere llenar la misma informacion de un modelo hacemos un classModelForm
+#Here we got our form, form is same as class News because thanks to django this is super easy to do.
 class NewsForm(forms.Form):
     class Meta:
         model = News
-        fields = '__all__' #Queremos que se llenen todos los atributos del model
+        fields = '__all__' # all fields because we want them to fill all fields.
 
         
