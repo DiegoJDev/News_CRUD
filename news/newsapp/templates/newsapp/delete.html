@@ -1,29 +1,76 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=   "{% static 'newsapp/reset.css' %}">
+    <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;900&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href=   "{% static 'newsapp/delete.css' %}">
     <title>NewsApp</title>
 </head>
 <body>
-    <header>
+  <header>
+      <section >
+          <a class = "admin" href="#">Admin</a>
+        </section>
+  </header>
+  <main>
+      <form  method="post">{% csrf_token %}
+        <section class="container">
+          <ul>
+            <section>
+              <h1>{{ news.title }}</h1>
+              <br>
+            </section>
+            <br>
+            <br>
+            <section>
+              <h2>{{news.news_text}}</h2>
+              <br>
+            </section>
+            <br>
+            <br>
+            <section>
+              <div class="card-author">Autor: {{news.author}}</div>
+              <br>
+            </section>
+            <br>
+            <br>
+            <section class ="card-dates">
+                <h4>{{news.pub_date}}</h4>
+                <h4 class="date-pub"><span>Noticia modificada:</span>{{news.update_date}}</h4>
+                <br>
+            </section>
+            <br>
+            <br>
 
-    </header>
-    <main>
-        <form method="post">{% csrf_token %}
-            {{ news.title }}
-            <li>{{news.news_text}}</li>
-            <li>{{news.author}}</li>
-            <li>{{news.pub_date}}</li>
-            <li>{{news.update_date}}</li>
-            <p>¿Estas seguro que quieres elimninar esta noticia?""?</p>
-            {{ form }}
-            <input type="submit" value="Confirm"> <input type=button value="Atras" onClick="javascript:history.go(-1);">
-        </form>
-    </main>
-    <footer>
+          </ul>
+        </section>
+        <br>
+        <br>
+        <br>
+        <p>¿Estas seguro que quieres elimninar esta noticia?</p>
 
-    </footer>
+        <div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <button><input class="button" type="submit" value="Eliminar"></button> <button><input class="button" type=button value="Atras" onClick="javascript:history.go(-1);"></button>  
+        </div>
+          
+          
+
+      </form>
+      
+  </main>
+  <footer>
+      Desarrollado por Diego Cardenas
+  </footer>
 </body>
 </html>

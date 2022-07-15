@@ -1,35 +1,66 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href=   "{% static 'newsapp/reset.css' %}">
+  <link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;900&display=swap"
+  rel="stylesheet"
+  />
+  <link rel="stylesheet" href=   "{% static 'newsapp/style.css' %}">
+
   <title>NewsApp</title>
 </head>
 <body>
   <header>
-    <h1>Ultimas Noticas NewsApp</h1>
+    <section >
+      <a class = "admin" href="#">Admin</a>
+    </section>
+    <section>
+      {% comment %} <img src=" {% static 'news/newsapp/static/newsapp/images/baseline_check_circle_white_24dp.png' %} " alt="logo"> {% endcomment %}
+    </section>
+
   </header>
+
+
+
   <main>
 
     <section>
-
-      <a href="{% url 'newsapp:create' %}">Crear noticia</a>
+      <h1>Ultimas Noticias NewsApp</h1>
+      <br>
+      <br>
+      <button><a class="createnews" href="{% url 'newsapp:create' %}" >Crear noticia</a></button>
+      <br>
+      <br>
 
     </section>
-
-    <section>
+    <article>*si quieres leer mejor la noticia da click en el titulo.</article>
+    <section class="cards-container">
     {% if list_news  %}
 
       {% for news in list_news %}
-      <ul>
-        <a href=" {% url 'newsapp:detail' news.id %} "><h2>{{news.title}}</h2></a>
+      <ul class="card">
+        <a href=" {% url 'newsapp:detail' news.id %} "><h2 class= "card-title">{{news.title}}</h2></a>
+        <br>
         <li>{{news.news_text}}</li>
-        <li>{{news.author}}</li>
-        <li>{{news.pub_date}}</li>
-        <li>{{news.update_date}}</li>
-        <a href="{% url 'newsapp:update' news.id %}">Editar</a>  <a href="{% url 'newsapp:delete' news.id %}">Eliminar</a>
+        <li class ="card-author"><span>Autor:</span>{{news.author}}</li>
+        <div class="card-dates">
+          <li>{{news.pub_date}}</li><li><span>fecha de modificacion:</span>{{news.update_date}}</li>
+        </div>
       </ul>
+      <br>
+      <button class="edit-button"><a href="{% url 'newsapp:update' news.id %}">Editar</a></button> <button button class="delete-button"><a href="{% url 'newsapp:delete' news.id %}">Eliminar</a></button>  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
       {% endfor %}
     

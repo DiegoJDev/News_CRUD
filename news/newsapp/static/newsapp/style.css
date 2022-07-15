@@ -1,0 +1,158 @@
+:root {
+    /* Colors */
+    --keepup-green: rgb(119, 184, 0) none repeat scroll 0% 0%;
+    --warm-black: #282623;
+    --off-white: #faf8f7;
+    --grey: #bababa;
+}
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "DM Sans", sans-serif;
+}
+
+
+a {
+    color:black;
+}
+
+button {
+
+    border: none;
+}
+
+body {
+    background: var(--off-white);
+}
+header {
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 1rem;
+    background: var(--keepup-green);
+}
+
+.admin {
+    font-size: 2rem;
+    color: var(--off-white)
+}
+
+
+main {
+    display: flex;
+    height: auto;
+    min-height: 100%;
+    flex-direction: column;
+    text-align: center;     
+    padding: 2rem;
+}
+
+main section h1 {
+    font-size: 3rem;
+}
+
+
+
+.createnews {
+
+    display: inline-block;
+    border-radius: 7px;
+    border:none;
+    background: var(--keepup-green);
+    color: var(--off-white);
+    text-align: center;
+    font-size: 13px;
+    width: 15rem;
+    padding: 2rem;
+    transition: all 0.4s;
+    cursor: pointer;
+
+}
+
+.cards-container {
+    box-sizing: border-box;
+    text-align: center;
+    height: 600px;
+    margin: 30px 60px 30px 60px;
+    overflow: auto;
+}
+
+.card {
+
+    width: 300px;
+    height: 150px;
+    margin:0 auto;
+    border: solid 1px #eee;
+    border-radius: 30px;
+    background: var(--off-white);
+    overflow: hidden;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card-author {
+    font-style: italic;
+}
+
+.card-dates{
+
+    font-style: italic;
+    color: #9c9c9c
+}
+
+.edit-button {
+    
+    display: inline-block;
+    border-radius: 7px;
+    border:none;
+    background: #bababa;
+    text-align: center;
+    font-size: 13px;
+    width: 6rem;
+    padding: 0.5rem;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.delete-button {
+
+    display: inline-block;
+    border-radius: 7px;
+    border:none;
+    background: #bababa;
+    color: var(--off-white);
+    text-align: center;
+    font-size: 13px;
+    width: 6rem;
+    padding: 0.5rem;
+    transition: all 0.4s;
+    cursor: pointer;
+
+}
+footer {
+    position: fixed;
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+    width: 100%;
+    padding: 2rem;
+    background: var(--warm-black);
+    color: var(--off-white);
+    bottom: 0;
+}
+
+

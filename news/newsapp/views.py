@@ -20,7 +20,7 @@ class NewsList(ListView):
     context_object_name="list_news"
 
     def get_queryset(self):
-        return News.objects.all()
+        return News.objects.order_by("-update_date")
 
 
 
