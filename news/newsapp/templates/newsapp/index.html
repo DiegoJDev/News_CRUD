@@ -6,11 +6,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% comment %} Calling a css to reset stayles by defect{% endcomment %}
   <link rel="stylesheet" href=   "{% static 'newsapp/reset.css' %}">
   <link
   href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;900&display=swap"
   rel="stylesheet"
   />
+  {% comment %} We can see here the template in which is rendering {% endcomment %}
   <link rel="stylesheet" href=   "{% static 'newsapp/style.css' %}">
 
   <title>NewsApp</title>
@@ -18,10 +20,11 @@
 <body>
   <header>
     <section >
+      {% comment %} A link to view the database {% endcomment %}
       <a class = "admin" href="/admin">Admin</a>
     </section>
     <section>
-      {% comment %} <img src=" {% static 'news/newsapp/static/newsapp/images/baseline_check_circle_white_24dp.png' %} " alt="logo"> {% endcomment %}
+      {% comment %} I got this sction to keep improving my template {% endcomment %}
     </section>
 
   </header>
@@ -41,6 +44,7 @@
     </section>
     <article>*si quieres leer mejor la noticia da click en el titulo.</article>
     <section class="cards-container">
+      {% comment %} If theres is any news go to for and print every news if not  show no news {% endcomment %}
     {% if list_news  %}
 
       {% for news in list_news %}
