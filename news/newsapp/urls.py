@@ -2,11 +2,14 @@
 from django.urls import path
 
 from .views import NewsList , DetailNews, CreateNews, UpdateNews, DeleteNews
+from django.views.generic import RedirectView
 
 app_name = 'newsapp'
 urlpatterns = [
-    #ex: /newsapp/
-    path("newsapp/", NewsList.as_view(), name='index'),
+
+    path('', RedirectView.as_view(url='index/', permanent=True)),
+
+    path("index/", NewsList.as_view(), name='index'),
 
     path("detail/<int:pk>", DetailNews.as_view(), name='detail'),
 
